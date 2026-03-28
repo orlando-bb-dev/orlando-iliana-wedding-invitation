@@ -1,0 +1,465 @@
+
+/* ===========================================
+   RESET Y CONFIGURACIÓN BASE
+=========================================== */
+html {
+    width: 100%;
+    height: 100%; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: black;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ===========================================
+   TAMAÑOS TIPOGRÁFICOS RESPONSIVOS PERSONALIZADOS
+=========================================== */
+.text_custom_large {
+    font-size: 24px;
+}
+
+.text-custom-xxlarge {
+    font-size: 28px;
+}
+
+@media (min-width: 576px) {
+    .text_custom_large {
+        font-size: 30px;
+    }
+    
+    .text-custom-xxlarge {
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 768px) {
+    .text_custom_large {
+        font-size: 35px;
+    }
+    
+    .text-custom-xxlarge {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .text_custom_large {
+        font-size: 40px;
+    }
+    
+    .text-custom-xxlarge {
+        font-size: 45px;
+    }
+}
+
+/* ===========================================
+   CLASES DE EFECTOS Y UTILIDADES
+=========================================== */
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+.gradient-up {
+    background: linear-gradient(to bottom, transparent, white);
+    opacity: 0.1;
+}
+
+.gradient-down {
+    background: linear-gradient(to bottom, white, transparent);
+    opacity: 0.1;
+}
+
+.img-inverse-v {
+    transform: rotateX(180deg);
+    transform-origin: center;
+}
+
+
+
+.text-gold-gradient {
+    background: linear-gradient(139deg,
+        rgba(181, 160, 42, 1) 0%,
+        rgba(199, 188, 87, 1) 11%,
+        rgba(255, 232, 156, 1) 18%,
+        rgba(237, 234, 83, 1) 23%,
+        rgba(237, 165, 83, 1) 34%,
+        rgba(237, 196, 62, 1) 42%,
+        rgba(237, 204, 83, 1) 50%,
+        rgba(255, 240, 184, 1) 54%,
+        rgba(255, 217, 184, 1) 61%,
+        rgba(255, 211, 66, 1) 68%,
+        rgba(255, 246, 204, 1) 78%,
+        rgba(255, 189, 66, 1) 88%,
+        rgba(222, 165, 60, 1) 98%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 1px 1px rgba(45, 28, 0, 0.34);
+}
+
+
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+/* ===========================================
+   COMPONENTES ESPECÍFICOS
+=========================================== */
+.content {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 470px;
+    position: relative; /* Añadido para contener el botón de WhatsApp */
+}
+
+.btn-border {
+    border: 1px solid black;
+    color: black;
+    background: transparent;
+    border-radius: 70px;
+    padding: 12px 60px;
+    align-items: center;
+    text-decoration: none;
+    gap: 5px;
+    display: inline-flex;
+}
+
+.btn-border i {
+    color: black;
+}
+
+.max-width-200 {
+    width: 100%;
+    max-width: 200px;
+}
+
+
+
+/* ===========================================
+   SECCIÓN DE IMAGEN Y TEXTO
+=========================================== */
+.image-section {
+    width: 100%;
+}
+
+.decorative-image {
+    width: 80px;
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* Responsive adjustments for decorative image */
+@media (max-width: 576px) {
+    .decorative-image {
+        width: 60px;
+        margin-left: 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .decorative-image {
+        width: 98px;
+        margin-left: 15px;
+    }
+}
+
+/* ===========================================
+   SLIDER/CAROUSEL
+=========================================== */
+.carousel-container {
+    padding: 0px 10px;
+}
+
+.carousel-container .splide__slide {
+    padding: 40px 10px 40px 10px;
+}
+
+/* ===========================================
+   IMÁGENES DE FONDO
+=========================================== */
+.background-image {
+    position: absolute;
+    width: 70%;
+    height: 100vh;
+    top: 0;
+    object-fit: fill;
+    z-index: -1;
+    transition: transform 1s ease-out;
+}
+
+.background-image.left {
+    left: 0;
+}
+
+.background-image.right {
+    right: 0;
+}
+
+.hide_left {
+    transform: translateX(-100%);
+}
+
+.hide_right {
+    transform: translateX(100%);
+}
+
+
+
+
+/* ===========================================
+   FOOTER
+=========================================== */
+.footer-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.footer-links {
+    margin: 0px 10px;
+}
+.footer-links a {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.bgr_ini {
+    height: 730px;
+}
+.bgr_grafic {
+    max-width: 80%;
+}
+
+
+
+
+.texto_position1 {
+    position: absolute;
+    margin-top: 190px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+
+
+.texto_position2 {
+    position: relative;
+    margin-top: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+
+
+
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+#countdown div{
+    font-family: "quattrocento";
+    font-size: 30px;
+}
+#countdown div p{
+    line-height: 1px;
+    font-size: 20px;
+}
+
+
+/* Cambia por la altura que necesites  flexslider*/
+.flexslider {
+    border: 0px;
+    height: 500px; 
+    overflow: hidden;
+    border: 0px;
+}
+.flexslider .slides,
+.flexslider .slides li {
+    height: 100%;
+}
+.flexslider .slides li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flex-direction-nav a {
+    height: 55px;
+    opacity: 1;
+}
+.flex-direction-nav .flex-prev {
+    left: 40px;
+}
+.flexslider:hover .flex-direction-nav .flex-prev {
+    opacity: 1;
+    left: 40px;
+}
+.flex-direction-nav .flex-next {
+    right: 40px;
+}
+.flexslider:hover .flex-direction-nav .flex-next {
+    opacity: 1;
+    right: 40px;
+}
+.flex-control-nav {
+    bottom: 60px;
+    z-index: 10;
+}
+.flex-direction-nav a:before {
+    color: white;
+}
+.flex-control-paging li a.flex-active {
+    background: white;
+    opacity: 0.5;
+}
+.flex-control-paging li a {
+    background: white;
+    width: 15px;
+    height: 15px;
+}
+.flex-control-paging li a:hover {
+    background: white;
+}
+
+
+.protector {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+.protector_centrado {
+    cursor: pointer;
+    width: 450px;
+}
+
+
+
+
+
+.animate__bounce_my {
+  animation: bounce 3s infinite; /* Duración total incluyendo pausa */
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: ease;
+}
+@keyframes bounce {
+  0%, 6.67%, 17.67%, 26.67% {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
+  }
+  13.33%, 14.33% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -30px, 0);
+  }
+  23.33% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -15px, 0);
+  }
+  30% {
+    transform: translate3d(0,-4px,0);
+  }
+  /* Pausa del 33% al 100% */
+  33%, 100% {
+    transform: translate3d(0,0,0);
+  }
+}
+
+
+@keyframes wind {
+    0%,to {
+        transform: rotate(0deg) translateX(0) translateY(0)
+    }
+
+    25% {
+        transform: rotate(2deg) translateX(2px) translateY(-2px)
+    }
+
+    50% {
+        transform: rotate(-2deg) translateX(-2px) translateY(2px)
+    }
+
+    75% {
+        transform: rotate(1deg) translateX(1px) translateY(-1px)
+    }
+}
+
+.animate_wind {
+    animation: wind 5s ease-in-out infinite
+}
+
+.dropdown-menu {
+  width: fit-content;
+  min-width: unset; /* Anula cualquier ancho mínimo por defecto */
+}
+
+
+
+
+
+.centx{
+    display: flex;
+    justify-content: left;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.circle {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+.olive{ background: #9AA5A5; }
+.beige{ background: #C3BCB4; }
+.mint{ background: #B7C8BC; }
+.pastel{ background: #93B4D4; }
+
+
+
+
+
+
+

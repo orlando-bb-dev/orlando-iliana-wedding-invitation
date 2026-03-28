@@ -1,0 +1,471 @@
+/* ===========================================
+   SISTEMA COMPLETO DE FILTROS CSS
+   Grises, Sepias y Efectos en Diferentes %
+   =========================================== */
+
+/* ===========================================
+   FILTROS DE ESCALA DE GRISES
+   =========================================== */
+
+/* Grises básicos en incrementos de 10% */
+.filter_gray_0 { filter: grayscale(0%) !important; }
+.filter_gray_10 { filter: grayscale(10%) !important; }
+.filter_gray_20 { filter: grayscale(20%) !important; }
+.filter_gray_30 { filter: grayscale(30%) !important; }
+.filter_gray_40 { filter: grayscale(40%) !important; }
+.filter_gray_50 { filter: grayscale(50%) !important; }
+.filter_gray_60 { filter: grayscale(60%) !important; }
+.filter_gray_70 { filter: grayscale(70%) !important; }
+.filter_gray_80 { filter: grayscale(80%) !important; }
+.filter_gray_90 { filter: grayscale(90%) !important; }
+.filter_gray_100 { filter: grayscale(100%) !important; }
+
+/* Grises con nombres descriptivos */
+.filter_gray_light { filter: grayscale(25%) !important; }
+.filter_gray_medium { filter: grayscale(50%) !important; }
+.filter_gray_dark { filter: grayscale(75%) !important; }
+.filter_gray_full { filter: grayscale(100%) !important; }
+
+/* ===========================================
+   FILTROS DE SEPIA
+   =========================================== */
+
+/* Sepias básicos en incrementos de 10% */
+.filter_sepia_0 { filter: sepia(0%) !important; }
+.filter_sepia_10 { filter: sepia(10%) !important; }
+.filter_sepia_20 { filter: sepia(20%) !important; }
+.filter_sepia_30 { filter: sepia(30%) !important; }
+.filter_sepia_40 { filter: sepia(40%) !important; }
+.filter_sepia_50 { filter: sepia(50%) !important; }
+.filter_sepia_60 { filter: sepia(60%) !important; }
+.filter_sepia_70 { filter: sepia(70%) !important; }
+.filter_sepia_80 { filter: sepia(80%) !important; }
+.filter_sepia_90 { filter: sepia(90%) !important; }
+.filter_sepia_100 { filter: sepia(100%) !important; }
+
+/* Sepias con nombres descriptivos */
+.filter_sepia_light { filter: sepia(25%) !important; }
+.filter_sepia_medium { filter: sepia(50%) !important; }
+.filter_sepia_dark { filter: sepia(75%) !important; }
+.filter_sepia_full { filter: sepia(100%) !important; }
+
+/* ===========================================
+   FILTROS DE BRILLO
+   =========================================== */
+
+.filter_brightness_0 { filter: brightness(0%) !important; }
+.filter_brightness_25 { filter: brightness(25%) !important; }
+.filter_brightness_50 { filter: brightness(50%) !important; }
+.filter_brightness_75 { filter: brightness(75%) !important; }
+.filter_brightness_100 { filter: brightness(100%) !important; }
+.filter_brightness_125 { filter: brightness(125%) !important; }
+.filter_brightness_150 { filter: brightness(150%) !important; }
+.filter_brightness_175 { filter: brightness(175%) !important; }
+.filter_brightness_200 { filter: brightness(200%) !important; }
+
+/* Brillo con nombres descriptivos */
+.filter_brightness_dark { filter: brightness(50%) !important; }
+.filter_brightness_normal { filter: brightness(100%) !important; }
+.filter_brightness_light { filter: brightness(150%) !important; }
+.filter_brightness_bright { filter: brightness(200%) !important; }
+
+/* ===========================================
+   FILTROS DE CONTRASTE
+   =========================================== */
+
+.filter_contrast_0 { filter: contrast(0%) !important; }
+.filter_contrast_25 { filter: contrast(25%) !important; }
+.filter_contrast_50 { filter: contrast(50%) !important; }
+.filter_contrast_75 { filter: contrast(75%) !important; }
+.filter_contrast_100 { filter: contrast(100%) !important; }
+.filter_contrast_125 { filter: contrast(125%) !important; }
+.filter_contrast_150 { filter: contrast(150%) !important; }
+.filter_contrast_175 { filter: contrast(175%) !important; }
+.filter_contrast_200 { filter: contrast(200%) !important; }
+
+/* ===========================================
+   FILTROS DE SATURACIÓN
+   =========================================== */
+
+.filter_saturate_0 { filter: saturate(0%) !important; }
+.filter_saturate_25 { filter: saturate(25%) !important; }
+.filter_saturate_50 { filter: saturate(50%) !important; }
+.filter_saturate_75 { filter: saturate(75%) !important; }
+.filter_saturate_100 { filter: saturate(100%) !important; }
+.filter_saturate_125 { filter: saturate(125%) !important; }
+.filter_saturate_150 { filter: saturate(150%) !important; }
+.filter_saturate_175 { filter: saturate(175%) !important; }
+.filter_saturate_200 { filter: saturate(200%) !important; }
+
+/* ===========================================
+   FILTROS DE TONOS (HUE)
+   =========================================== */
+
+.filter_hue_0 { filter: hue-rotate(0deg) !important; }
+.filter_hue_30 { filter: hue-rotate(30deg) !important; }
+.filter_hue_60 { filter: hue-rotate(60deg) !important; }
+.filter_hue_90 { filter: hue-rotate(90deg) !important; }
+.filter_hue_120 { filter: hue-rotate(120deg) !important; }
+.filter_hue_150 { filter: hue-rotate(150deg) !important; }
+.filter_hue_180 { filter: hue-rotate(180deg) !important; }
+.filter_hue_210 { filter: hue-rotate(210deg) !important; }
+.filter_hue_240 { filter: hue-rotate(240deg) !important; }
+.filter_hue_270 { filter: hue-rotate(270deg) !important; }
+.filter_hue_300 { filter: hue-rotate(300deg) !important; }
+.filter_hue_330 { filter: hue-rotate(330deg) !important; }
+
+/* Tonos con nombres de colores */
+.filter_hue_red { filter: hue-rotate(0deg) !important; }
+.filter_hue_orange { filter: hue-rotate(30deg) !important; }
+.filter_hue_yellow { filter: hue-rotate(60deg) !important; }
+.filter_hue_green { filter: hue-rotate(120deg) !important; }
+.filter_hue_cyan { filter: hue-rotate(180deg) !important; }
+.filter_hue_blue { filter: hue-rotate(240deg) !important; }
+.filter_hue_purple { filter: hue-rotate(270deg) !important; }
+.filter_hue_pink { filter: hue-rotate(300deg) !important; }
+
+/* ===========================================
+   FILTROS DE DESENFOQUE
+   =========================================== */
+
+.filter_blur_0 { filter: blur(0px) !important; }
+.filter_blur_1 { filter: blur(1px) !important; }
+.filter_blur_2 { filter: blur(2px) !important; }
+.filter_blur_3 { filter: blur(3px) !important; }
+.filter_blur_4 { filter: blur(4px) !important; }
+.filter_blur_5 { filter: blur(5px) !important; }
+.filter_blur_10 { filter: blur(10px) !important; }
+.filter_blur_15 { filter: blur(15px) !important; }
+.filter_blur_20 { filter: blur(20px) !important; }
+
+/* Desenfoque con nombres descriptivos */
+.filter_blur_light { filter: blur(2px) !important; }
+.filter_blur_medium { filter: blur(5px) !important; }
+.filter_blur_heavy { filter: blur(10px) !important; }
+
+/* ===========================================
+   FILTROS COMBINADOS POPULARES
+   =========================================== */
+
+/* Efectos vintage y retro */
+.filter_vintage { 
+    filter: sepia(50%) contrast(130%) brightness(110%) saturate(90%) !important; 
+}
+
+.filter_retro { 
+    filter: sepia(40%) contrast(120%) brightness(120%) saturate(80%) !important; 
+}
+
+.filter_old-photo { 
+    filter: sepia(80%) contrast(110%) brightness(120%) saturate(70%) !important; 
+}
+
+/* Efectos cinematográficos */
+.filter_cinema { 
+    filter: contrast(120%) brightness(90%) saturate(120%) !important; 
+}
+
+.filter_noir { 
+    filter: grayscale(100%) contrast(150%) brightness(80%) !important; 
+}
+
+.filter_drama { 
+    filter: contrast(130%) brightness(85%) saturate(60%) !important; 
+}
+
+/* Efectos de Instagram */
+.filter_instagram_1977 { 
+    filter: sepia(50%) hue-rotate(-30deg) saturate(140%) contrast(110%) !important; 
+}
+
+.filter_instagram_aden { 
+    filter: sepia(20%) saturate(85%) brightness(120%) contrast(90%) !important; 
+}
+
+.filter_instagram_brooklyn { 
+    filter: sepia(25%) saturate(110%) brightness(110%) contrast(90%) !important; 
+}
+
+.filter_instagram_clarendon { 
+    filter: sepia(15%) saturate(120%) brightness(105%) contrast(130%) !important; 
+}
+
+.filter_instagram_gingham { 
+    filter: sepia(10%) saturate(80%) brightness(105%) contrast(110%) !important; 
+}
+
+.filter_instagram_hudson { 
+    filter: sepia(25%) saturate(110%) brightness(125%) contrast(90%) !important; 
+}
+
+.filter_instagram_lofi { 
+    filter: sepia(10%) saturate(150%) brightness(110%) contrast(150%) !important; 
+}
+
+.filter_instagram_mayfair { 
+    filter: sepia(40%) saturate(110%) brightness(115%) contrast(100%) !important; 
+}
+
+.filter_instagram_nashville { 
+    filter: sepia(25%) saturate(120%) brightness(105%) contrast(105%) !important; 
+}
+
+.filter_instagram_toaster { 
+    filter: sepia(25%) saturate(130%) brightness(115%) contrast(110%) !important; 
+}
+
+.filter_instagram_valencia { 
+    filter: sepia(25%) saturate(120%) brightness(105%) contrast(110%) !important; 
+}
+
+.filter_instagram_walden { 
+    filter: sepia(35%) saturate(120%) brightness(115%) contrast(100%) !important; 
+}
+
+.filter_instagram_xpro2 { 
+    filter: sepia(45%) saturate(120%) brightness(105%) contrast(130%) !important; 
+}
+
+/* ===========================================
+   FILTROS DE COLORES ESPECÍFICOS
+   =========================================== */
+
+/* Tonos azules */
+.filter_blue_cold { 
+    filter: hue-rotate(240deg) saturate(120%) brightness(90%) !important; 
+}
+
+.filter_blue_deep { 
+    filter: hue-rotate(220deg) saturate(150%) brightness(80%) !important; 
+}
+
+/* Tonos cálidos */
+.filter_warm_sunset { 
+    filter: hue-rotate(15deg) saturate(130%) brightness(110%) !important; 
+}
+
+.filter_warm_golden { 
+    filter: hue-rotate(30deg) saturate(120%) brightness(120%) !important; 
+}
+
+/* Tonos fríos */
+.filter_cold-winter { 
+    filter: hue-rotate(200deg) saturate(80%) brightness(95%) !important; 
+}
+
+.filter_cold-ice { 
+    filter: hue-rotate(180deg) saturate(60%) brightness(110%) !important; 
+}
+
+/* ===========================================
+   FILTROS CON TRANSICIONES
+   =========================================== */
+
+.filter_transition { 
+    transition: filter 0.3s ease !important; 
+}
+
+.filter_transition_slow { 
+    transition: filter 0.6s ease !important; 
+}
+
+.filter_transition_fast { 
+    transition: filter 0.1s ease !important; 
+}
+
+/* ===========================================
+   FILTROS HOVER
+   =========================================== */
+
+.filter_hover_gray:hover { 
+    filter: grayscale(100%) !important; 
+}
+
+.filter_hover_sepia:hover { 
+    filter: sepia(100%) !important; 
+}
+
+.filter_hover_bright:hover { 
+    filter: brightness(150%) !important; 
+}
+
+.filter_hover_blur:hover { 
+    filter: blur(3px) !important; 
+}
+
+.filter_hover_color:hover { 
+    filter: grayscale(0%) !important; 
+}
+
+/* ===========================================
+   FILTROS RESPONSIVE
+   =========================================== */
+
+/* Móvil - efectos más suaves */
+@media (max-width: 767px) {
+    .filter_mobile_soft { 
+        filter: grayscale(30%) brightness(110%) !important; 
+    }
+}
+
+/* Tablet y desktop - efectos más intensos */
+@media (min-width: 768px) {
+    .filter_desktop_intense { 
+        filter: grayscale(70%) contrast(120%) !important; 
+    }
+}
+
+/* ===========================================
+   FILTROS PARA DARK MODE
+   =========================================== */
+
+@media (prefers-color-scheme: dark) {
+    .filter_dark_mode { 
+        filter: brightness(80%) contrast(120%) !important; 
+    }
+}
+
+/* ===========================================
+   UTILIDADES EXTRA
+   =========================================== */
+
+/* Remover todos los filtros */
+.filter_none { 
+    filter: none !important; 
+}
+
+/* Filtro invertido (negativo) */
+.filter_invert { 
+    filter: invert(100%) !important; 
+}
+
+.filter_invert_50 { 
+    filter: invert(50%) !important; 
+}
+
+.filter_white {
+    filter: grayscale(1) brightness(0) invert(1) !important;
+}
+.filter_black {
+    filter: grayscale(1) brightness(0) contrast(1) !important;
+}
+.filter_golden {
+    filter: sepia(95%) saturate(120%) hue-rotate(18deg) brightness(0.88) contrast(1.05) !important;
+    -webkit-filter: sepia(95%) saturate(120%) hue-rotate(18deg) brightness(0.88) contrast(1.05) !important;
+}
+
+
+/* Filtro Palta/Verde Aguacate */
+.filter_palta {
+    filter: sepia(80%) saturate(180%) hue-rotate(70deg) brightness(0.75) contrast(1.15) !important;
+    -webkit-filter: sepia(80%) saturate(180%) hue-rotate(70deg) brightness(0.75) contrast(1.15) !important;
+}
+
+/* Filtro Verde Oscuro */
+.filter_verde_oscuro {
+    filter: sepia(60%) saturate(200%) hue-rotate(90deg) brightness(0.6) contrast(1.25) !important;
+    -webkit-filter: sepia(60%) saturate(200%) hue-rotate(90deg) brightness(0.6) contrast(1.25) !important;
+}
+
+/* Filtro Turquesa */
+.filter_turquesa {
+    filter: sepia(85%) saturate(160%) hue-rotate(170deg) brightness(0.85) contrast(1.1) !important;
+    -webkit-filter: sepia(85%) saturate(160%) hue-rotate(170deg) brightness(0.85) contrast(1.1) !important;
+}
+
+/* Versiones alternativas con ajustes más sutiles */
+
+/* Palta suave */
+.filter_palta_suave {
+    filter: sepia(70%) saturate(150%) hue-rotate(65deg) brightness(0.8) contrast(1.1) !important;
+    -webkit-filter: sepia(70%) saturate(150%) hue-rotate(65deg) brightness(0.8) contrast(1.1) !important;
+}
+
+/* Verde oscuro intenso */
+.filter_verde_intenso {
+    filter: sepia(70%) saturate(250%) hue-rotate(95deg) brightness(0.5) contrast(1.3) !important;
+    -webkit-filter: sepia(70%) saturate(250%) hue-rotate(95deg) brightness(0.5) contrast(1.3) !important;
+}
+
+/* Turquesa brillante */
+.filter_turquesa_brillante {
+    filter: sepia(90%) saturate(180%) hue-rotate(175deg) brightness(0.9) contrast(1.05) !important;
+    -webkit-filter: sepia(90%) saturate(180%) hue-rotate(175deg) brightness(0.9) contrast(1.05) !important;
+}
+
+
+
+
+
+.filter_olive_green {
+    filter: sepia(100%) saturate(120%) hue-rotate(27deg) brightness(0.7) contrast(1.1) !important;
+}
+
+/* Filtro de opacidad */
+.filter_opacity_10 { 
+    filter: opacity(10%) !important; 
+}
+
+.filter_opacity_25 { 
+    filter: opacity(25%) !important; 
+}
+
+.filter_opacity_50 { 
+    filter: opacity(50%) !important; 
+}
+
+.filter_opacity_75 { 
+    filter: opacity(75%) !important; 
+}
+
+/* Filtro de drop-shadow */
+.filter_shadow_light { 
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3)) !important; 
+}
+
+.filter_shadow_medium { 
+    filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.4)) !important; 
+}
+
+.filter_shadow_heavy { 
+    filter: drop-shadow(8px 8px 16px rgba(0,0,0,0.5)) !important; 
+}
+
+/*
+
+🎨 Filtros Básicos:
+html<!-- Escala de grises -->
+<img src="imagen.jpg" class="filter_gray_50">
+<img src="imagen.jpg" class="filter_gray_100">
+
+<!-- Efectos sepia -->
+<img src="imagen.jpg" class="filter_sepia_30">
+<img src="imagen.jpg" class="filter_sepia_full">
+📷 Filtros Estilo Instagram:
+html<img src="imagen.jpg" class="filter_instagram_1977">
+<img src="imagen.jpg" class="filter_instagram_valencia">
+<img src="imagen.jpg" class="filter_instagram_nashville">
+🎭 Efectos Cinematográficos:
+html<img src="imagen.jpg" class="filter_vintage">
+<img src="imagen.jpg" class="filter_noir">
+<img src="imagen.jpg" class="filter_cinema">
+🌈 Filtros de Color:
+html<img src="imagen.jpg" class="filter_hue_blue">
+<img src="imagen.jpg" class="filter_warm_sunset">
+<img src="imagen.jpg" class="filter_cold-winter">
+⚡ Filtros con Hover:
+html<img src="imagen.jpg" class="filter_hover_gray filter_transition">
+<img src="imagen.jpg" class="filter_hover_sepia filter_transition_slow">
+🎯 Combinaciones Populares:
+html<!-- Foto vintage -->
+<img src="imagen.jpg" class="filter_sepia_60 filter_contrast_110">
+
+<!-- Efecto dramático -->
+<img src="imagen.jpg" class="filter_gray_70 filter_contrast_130">
+
+<!-- Efecto cálido -->
+<img src="imagen.jpg" class="filter_warm_golden filter_brightness_110">
+📱 Uso Responsivo:
+html<img src="imagen.jpg" class="filter_mobile_soft filter_desktop_intense">
+
+*/

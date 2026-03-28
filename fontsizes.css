@@ -1,0 +1,131 @@
+/* ===========================================
+   SISTEMA DE FONT-SIZE RESPONSIVO PERSONALIZADO
+   =========================================== */
+
+/* Base font sizes (móvil first) */
+.fz-1 { font-size: 2.5rem !important; }
+.fz-2 { font-size: 2rem !important; }
+.fz-3 { font-size: 1.75rem !important; }
+.fz-4 { font-size: 1.5rem !important; }
+.fz-5 { font-size: 1.25rem !important; }
+.fz-6 { font-size: 1rem !important; }
+
+/* ===========================================
+   BREAKPOINT SM (576px+)
+   =========================================== */
+@media (min-width: 576px) {
+  .fz-sm-1 { font-size: 2.5rem !important; }
+  .fz-sm-2 { font-size: 2rem !important; }
+  .fz-sm-3 { font-size: 1.75rem !important; }
+  .fz-sm-4 { font-size: 1.5rem !important; }
+  .fz-sm-5 { font-size: 1.25rem !important; }
+  .fz-sm-6 { font-size: 1rem !important; }
+}
+
+/* ===========================================
+   BREAKPOINT MD (768px+)
+   =========================================== */
+@media (min-width: 768px) {
+  .fz-md-1 { font-size: 3rem !important; }
+  .fz-md-2 { font-size: 2.5rem !important; }
+  .fz-md-3 { font-size: 2rem !important; }
+  .fz-md-4 { font-size: 1.75rem !important; }
+  .fz-md-5 { font-size: 1.5rem !important; }
+  .fz-md-6 { font-size: 1.25rem !important; }
+}
+
+/* ===========================================
+   BREAKPOINT LG (992px+)
+   =========================================== */
+@media (min-width: 992px) {
+  .fz-lg-1 { font-size: 3.5rem !important; }
+  .fz-lg-2 { font-size: 3rem !important; }
+  .fz-lg-3 { font-size: 2.5rem !important; }
+  .fz-lg-4 { font-size: 2rem !important; }
+  .fz-lg-5 { font-size: 1.75rem !important; }
+  .fz-lg-6 { font-size: 1.5rem !important; }
+}
+
+/* ===========================================
+   BREAKPOINT XL (1200px+)
+   =========================================== */
+@media (min-width: 1200px) {
+  .fz-xl-1 { font-size: 4rem !important; }
+  .fz-xl-2 { font-size: 3.5rem !important; }
+  .fz-xl-3 { font-size: 3rem !important; }
+  .fz-xl-4 { font-size: 2.5rem !important; }
+  .fz-xl-5 { font-size: 2rem !important; }
+  .fz-xl-6 { font-size: 1.75rem !important; }
+}
+
+/* ===========================================
+   BREAKPOINT XXL (1400px+)
+   =========================================== */
+@media (min-width: 1400px) {
+  .fz-xxl-1 { font-size: 4.5rem !important; }
+  .fz-xxl-2 { font-size: 4rem !important; }
+  .fz-xxl-3 { font-size: 3.5rem !important; }
+  .fz-xxl-4 { font-size: 3rem !important; }
+  .fz-xxl-5 { font-size: 2.5rem !important; }
+  .fz-xxl-6 { font-size: 2rem !important; }
+}
+
+/* ===========================================
+   CLASES ESPECIALES EXTRA
+   =========================================== */
+
+/* Font sizes extremos */
+.fz-xs { font-size: 0.75rem !important; }
+.fz-sm { font-size: 0.875rem !important; }
+.fz-base { font-size: 1rem !important; }
+.fz-lg { font-size: 1.125rem !important; }
+.fz-xl { font-size: 1.25rem !important; }
+.fz-2xl { font-size: 1.5rem !important; }
+.fz-3xl { font-size: 1.875rem !important; }
+.fz-4xl { font-size: 2.25rem !important; }
+.fz-5xl { font-size: 3rem !important; }
+.fz-6xl { font-size: 3.75rem !important; }
+.fz-7xl { font-size: 4.5rem !important; }
+.fz-8xl { font-size: 6rem !important; }
+.fz-9xl { font-size: 8rem !important; }
+
+/* Font sizes con viewport units (responsivo automático) */
+.fz-vw-1 { font-size: 4vw !important; }
+.fz-vw-2 { font-size: 3.5vw !important; }
+.fz-vw-3 { font-size: 3vw !important; }
+.fz-vw-4 { font-size: 2.5vw !important; }
+.fz-vw-5 { font-size: 2vw !important; }
+.fz-vw-6 { font-size: 1.5vw !important; }
+
+/* Font sizes con clamp() (fluidos) */
+.fz-fluid-1 { font-size: clamp(2rem, 4vw, 4rem) !important; }
+.fz-fluid-2 { font-size: clamp(1.75rem, 3.5vw, 3.5rem) !important; }
+.fz-fluid-3 { font-size: clamp(1.5rem, 3vw, 3rem) !important; }
+.fz-fluid-4 { font-size: clamp(1.25rem, 2.5vw, 2.5rem) !important; }
+.fz-fluid-5 { font-size: clamp(1.125rem, 2vw, 2rem) !important; }
+.fz-fluid-6 { font-size: clamp(1rem, 1.5vw, 1.5rem) !important; }
+
+
+/*
+
+📏 Escalas Disponibles
+fz-1 → fz-md-1
+fz-2 → fz-md-2
+fz-3 → fz-md-3
+fz-4 → fz-md-4
+fz-5 → fz-md-5
+fz-6 → fz-md-6
+💻 Código de Ejemplo:
+<h1 class="fz-4 fz-md-2 fz-lg-1">
+    Título que crece en cada breakpoint
+</h1>
+
+<p class="fz-6 fz-md-5 fz-lg-4">
+    Párrafo que se adapta perfectamente
+</p>
+
+<div class="fz-fluid-3">
+    Texto con tamaño fluido automático
+</div>
+
+*/
