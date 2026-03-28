@@ -5,16 +5,16 @@ const ResponsiveConfig = {
         tablet: 768,
         desktop: 1024
     },
-    
-    getCurrentBreakpoint: function() {
+
+    getCurrentBreakpoint: function () {
         const width = window.innerWidth;
         if (width < this.breakpoints.mobile) return 'mobile';
         if (width < this.breakpoints.tablet) return 'tablet';
         if (width < this.breakpoints.desktop) return 'desktop';
         return 'wide';
     },
-    
-    getMarginForBreakpoint: function(breakpoint) {
+
+    getMarginForBreakpoint: function (breakpoint) {
         const margins = {
             mobile: 15,
             tablet: 25,
@@ -36,33 +36,33 @@ class FloatingElementController {
         this.lastViewportWidth = this.getViewportWidth();
         this.lastScrollbarWidth = this.getScrollbarWidth();
         this.scrollObserver = null;
-        
+
         this.init();
     }
-    
+
     init() {
         // Bind methods para eventos
         this.handleResize = this.handleResize.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
-        
+
         // Escuchar tanto resize como scroll
         window.addEventListener('resize', this.handleResize);
         window.addEventListener('scroll', this.handleScroll);
-        
+
         // También escuchar cambios en el DOM que puedan afectar el scroll
         this.observeScrollChanges();
     }
-    
+
     // Registrar un nuevo elemento flotante
     register(elementSelector, containerSelector, options = {}) {
         const element = document.querySelector(elementSelector);
         const container = document.querySelector(containerSelector);
-        
+
         if (!element || !container) {
             console.warn(`No se encontraron los elementos: ${elementSelector} o ${containerSelector}`);
             return false;
         }
-        
+
         const config = {
             element,
             container,
@@ -74,9 +74,9 @@ class FloatingElementController {
             initialPosition: null, // Guardamos la posición inicial
             applyFlex: options.applyFlex !== false // Por defecto true, se puede desactivar con false
         };
-        
+
         this.elements.set(elementSelector, config);
-        
+
         // Posición inicial con delay
         setTimeout(() => {
             this.updateElementPosition(elementSelector);
@@ -86,22 +86,22 @@ class FloatingElementController {
                 updatedConfig.initialPosition = updatedConfig.element.style.left;
             }
         }, 100);
-        
+
         return true;
     }
-    
+
     // Desregistrar un elemento
     unregister(elementSelector) {
         this.elements.delete(elementSelector);
     }
-    
+
     // Actualizar posición de un elemento específico
     updateElementPosition(elementSelector) {
         const config = this.elements.get(elementSelector);
         if (!config) return;
-        
+
         const { element, container, width, margin, side, minMargin, customPosition, applyFlex } = config;
-        
+
         // Si hay una función de posición personalizada, usarla
         if (customPosition && typeof customPosition === 'function') {
             customPosition(element, container, ResponsiveConfig.getCurrentBreakpoint());
@@ -111,16 +111,16 @@ class FloatingElementController {
             }
             return;
         }
-        
+
         const containerRect = container.getBoundingClientRect();
         const windowWidth = window.innerWidth;
         const currentBreakpoint = ResponsiveConfig.getCurrentBreakpoint();
-        
+
         // Determinar margen
         const adjustedMargin = margin !== null ? margin : ResponsiveConfig.getMarginForBreakpoint(currentBreakpoint);
-        
+
         let position;
-        
+
         if (side === 'right') {
             // Posicionar desde la derecha
             const rightPosition = containerRect.right - adjustedMargin - width;
@@ -137,42 +137,42 @@ class FloatingElementController {
             const minLeft = Math.max(containerRect.left + adjustedMargin, minMargin);
             position = Math.min(Math.max(leftPosition, minLeft), maxLeft);
         }
-        
+
         // Aplicar estilos de posición
         element.style.left = position + 'px';
         element.style.transform = 'none';
         element.style.marginLeft = '0';
-        
+
         // Aplicar display flex al final del posicionamiento
         if (applyFlex) {
             element.style.display = 'flex';
         }
     }
-    
+
     // Obtener el ancho real del viewport (sin scrollbar)
     getViewportWidth() {
         return document.documentElement.clientWidth || window.innerWidth;
     }
-    
+
     // Detectar ancho de scrollbar
     getScrollbarWidth() {
         return window.innerWidth - document.documentElement.clientWidth;
     }
-    
+
     // Observar cambios que puedan afectar el scroll
     observeScrollChanges() {
         // Verificar cambios más frecuentemente cuando hay elementos registrados
         this.scrollCheckInterval = setInterval(() => {
             this.checkViewportChange();
         }, 100); // Más frecuente para mejor detección
-        
+
         // Observer para cambios en el DOM
         if (typeof MutationObserver !== 'undefined') {
             this.scrollObserver = new MutationObserver(() => {
                 // Pequeño delay para que se apliquen los cambios de DOM
                 setTimeout(() => this.checkViewportChange(), 10);
             });
-            
+
             this.scrollObserver.observe(document.body, {
                 childList: true,
                 subtree: true,
@@ -180,7 +180,7 @@ class FloatingElementController {
                 attributeFilter: ['style', 'class']
             });
         }
-        
+
         // Escuchar cambios en el tamaño del documento
         if (typeof ResizeObserver !== 'undefined') {
             this.documentObserver = new ResizeObserver(() => {
@@ -189,18 +189,18 @@ class FloatingElementController {
             this.documentObserver.observe(document.documentElement);
         }
     }
-    
+
     // Verificar si cambió el viewport o scrollbar
     checkViewportChange() {
         const currentViewportWidth = this.getViewportWidth();
         const currentScrollbarWidth = this.getScrollbarWidth();
-        
-        if (currentViewportWidth !== this.lastViewportWidth || 
+
+        if (currentViewportWidth !== this.lastViewportWidth ||
             currentScrollbarWidth !== this.lastScrollbarWidth) {
-            
+
             this.lastViewportWidth = currentViewportWidth;
             this.lastScrollbarWidth = currentScrollbarWidth;
-            
+
             // Actualizar elementos con un pequeño delay para asegurar estabilidad
             clearTimeout(this.updateTimeout);
             this.updateTimeout = setTimeout(() => {
@@ -208,7 +208,7 @@ class FloatingElementController {
             }, 10);
         }
     }
-    
+
     // Manejar scroll
     handleScroll() {
         clearTimeout(this.scrollTimeout);
@@ -217,13 +217,13 @@ class FloatingElementController {
             this.checkScrollbarChange();
         }, this.debounceDelay);
     }
-    
+
     // Manejar resize con debounce - solo se ejecuta si cambia el breakpoint
     handleResize() {
         clearTimeout(this.resizeTimeout);
         this.resizeTimeout = setTimeout(() => {
             const currentBreakpoint = ResponsiveConfig.getCurrentBreakpoint();
-            
+
             // Solo actualizar si cambió el breakpoint o el ancho cambió significativamente
             if (currentBreakpoint !== this.lastBreakpoint) {
                 this.lastBreakpoint = currentBreakpoint;
@@ -232,32 +232,32 @@ class FloatingElementController {
             }
         }, this.debounceDelay);
     }
-    
+
     // Método para forzar actualización manual (si es necesario)
     forceUpdate() {
         this.updateAllElements();
     }
-    
+
     // Actualizar todos los elementos registrados
     updateAllElements() {
         this.elements.forEach((config, selector) => {
             this.updateElementPosition(selector);
         });
     }
-    
+
     // Limpiar event listeners
     destroy() {
         window.removeEventListener('resize', this.handleResize);
         window.removeEventListener('scroll', this.handleScroll);
-        
+
         if (this.scrollObserver) {
             this.scrollObserver.disconnect();
         }
-        
+
         if (this.scrollCheckInterval) {
             clearInterval(this.scrollCheckInterval);
         }
-        
+
         this.elements.clear();
     }
 
@@ -265,11 +265,11 @@ class FloatingElementController {
 
     checkScrollbarChange() {
         const currentScrollbarWidth = this.getScrollbarWidth();
-        
+
         // Verificar si cambió el ancho de la scrollbar
         if (currentScrollbarWidth !== this.lastScrollbarWidth) {
             this.lastScrollbarWidth = currentScrollbarWidth;
-            
+
             // Actualizar todos los elementos cuando cambia la scrollbar
             this.updateAllElements();
         }
@@ -285,52 +285,90 @@ function controlFloatingElement(elementSelector, containerSelector, options = {}
     return floatingController.register(elementSelector, containerSelector, options);
 }
 
-/* 
-EJEMPLOS DE USO:
+// Lógica para la animación de las palomas
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('pigeon-container');
+    if (!container) return;
 
-// Uso básico - aplica display: flex por defecto
-controlFloatingElement('.mi-elemento', '.contenedor');
+    const pigeonHTML = `
+        <img src="gif-paloma-13.gif" alt="paloma">
+    `;
 
-// Desactivar display: flex si no lo necesitas
-controlFloatingElement('.mi-elemento', '.contenedor', {
-    applyFlex: false
-});
+    const pigeons = [];
+    const numPairs = 2; // Dos parejas de palomas
 
-// Con opciones adicionales
-controlFloatingElement('.mi-elemento', '.contenedor', {
-    width: 100,
-    side: 'right',
-    margin: 30,
-    applyFlex: true // explícitamente activado
-});
-*/
+    for (let i = 0; i < numPairs; i++) {
+        const baseDelay = i * 0.4;
+        const baseTargetX = 105 + Math.random() * 10;
 
+        for (let j = 0; j < 2; j++) {
+            const pigeon = document.createElement('div');
+            pigeon.className = 'pigeon';
+            pigeon.innerHTML = pigeonHTML;
 
+            // Cada pareja vuela muy cerca
+            const delay = baseDelay + j * 0.08;
+            const targetX = baseTargetX + j * 3;
+            const pairOffset = j * 2; // Pequeño offset vertical para la pareja
 
-/*
-document.addEventListener('DOMContentLoaded', function() {
-    // Registrar múltiples elementos flotantes
-    floatingController.register('.whatsapp_float', '.content', {
-        width: 80,
-        side: 'left'
-    });
-    
-    floatingController.register('.chat-widget', '.main-container', {
-        width: 100,
-        side: 'right',
-        margin: 30
-    });
-    
-    floatingController.register('.help-button', '.content', {
-        width: 60,
-        side: 'left',
-        margin: 20,
-        customPosition: (element, container, breakpoint) => {
-            // Lógica personalizada de posicionamiento
-            const rect = container.getBoundingClientRect();
-            element.style.left = rect.left + 'px';
-            element.style.top = rect.top + 100 + 'px';
+            container.appendChild(pigeon);
+            pigeons.push({ element: pigeon, targetX, delay, pairOffset });
         }
-    });
+    }
+
+    // Buscamos el icono de la iglesia como punto de partida
+    const churchIcon = document.querySelector('img[src="ico_iglesia2.svg"]');
+
+    if (!churchIcon) return;
+
+    function updatePigeons() {
+        const viewportHeight = window.innerHeight;
+        const viewportWidth = window.innerWidth;
+        const rect = churchIcon.getBoundingClientRect();
+
+        // Calculamos el centro de la iglesia para el inicio X
+        const churchCenterX = (rect.left + rect.width / 2) / viewportWidth * 100;
+
+        // Rango de scroll extendido
+        const startBuffer = 300;
+        const endBuffer = 800;
+        const totalDistance = viewportHeight + rect.height + startBuffer + endBuffer;
+
+        let progress = (viewportHeight + startBuffer - rect.top) / totalDistance;
+        progress = Math.max(0, Math.min(1, progress));
+
+        if (progress > 0 && progress < 1) {
+            container.style.display = 'block';
+            pigeons.forEach((p, index) => {
+                let pProgress = (progress - p.delay) / (1 - p.delay);
+                pProgress = Math.max(0, Math.min(1, pProgress));
+
+                // Trayectoria: desde el centro de la iglesia hacia la esquina superior derecha
+                const x = churchCenterX + (p.targetX - churchCenterX) * pProgress;
+
+                // Vertical: desde la iglesia hacia arriba
+                const startY = (rect.top + rect.height / 2) / viewportHeight * 100;
+                const targetY = -20;
+                const y = startY + (targetY - startY) * pProgress + p.pairOffset;
+
+                p.element.style.left = `${x}%`;
+                p.element.style.top = `${y}%`;
+
+                // Opacidad
+                let opacity = 0;
+                if (pProgress > 0 && pProgress < 0.9) {
+                    opacity = Math.min(1, pProgress * 5) * Math.min(1, (0.9 - pProgress) * 5);
+                }
+                p.element.style.opacity = opacity;
+
+                // Escala para perspectiva
+                p.element.style.transform = `scale(${0.6 + pProgress * 0.4})`;
+            });
+        } else {
+            container.style.display = 'none';
+        }
+    }
+
+    window.addEventListener('scroll', updatePigeons);
+    updatePigeons(); // Ejecutar inicialmente
 });
-*/
